@@ -8,7 +8,7 @@ class Plate():
 
     def plate_detection(self):
         model_plate = YOLO("Yolo/best.pt")
-        image = cv2.imread(self.main_image)
+        image = self.main_image
         results = model_plate(image,conf=0.80)
         image_rgb = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
         list_img = []
